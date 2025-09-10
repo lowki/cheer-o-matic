@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cheer O Matic</title>
+  <meta name="description" content="Tous mes liens importants sur une page." />
+  <style>
+    /* ——— Styles de base ——— */
+    :root {
+      --bg: #0b0c0f;
+      --card: #111318;
+      --text: #e8e9ee;
+      --muted: #a5a9b7;
+      --accent: #6ee7d2;
+      --border: #1b1f2a;
+      --ring: #6ee7d2;
+      --link-bg: #181b23;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --text: #12131a;
+        --muted: #59607a;
+        --accent: #0fa3b1;
+        --border: #e5e7ef;
+        --ring: #0fa3b1;
+        --link-bg: #f3f5fa;
+      }
+    }
+    /* Thème manuel via data-theme="light|dark" sur <html> */
+    html[data-theme="dark"] {
+      --bg: #0b0c0f; --card:#111318; --text:#e8e9ee; --muted:#a5a9b7; --accent:#6ee7d2; --border:#1b1f2a; --ring:#6ee7d2; --link-bg:#181b23;
+    }
+    html[data-theme="light"] {
+      --bg: #f6f7fb; --card:#ffffff; --text:#12131a; --muted:#59607a; --accent:#0fa3b1; --border:#e5e7ef; --ring:#0fa3b1; --link-bg:#f3f5fa;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 50% -20%, rgba(111,231,210,.15), transparent), var(--bg);
+      color: var(--text);
+    }
+    .container {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 640px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .theme-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .theme-btn:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+    .profile { text-align: center; margin-top: 8px; margin-bottom: 20px; }h1 { font-size: 28px; line-height: 1.2; margin: 16px 0 8px; }.links { display: grid; gap: 12px; margin: 22px 0; }
+    .link {
+      display: flex; align-items: center; justify-content: space-between;
+      text-decoration: none; color: var(--text);
+      background: var(--link-bg);
+      border: 1px solid var(--border);
+      padding: 14px 16px; border-radius: 14px;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+    }
+    .link:hover { transform: translateY(-1px); border-color: rgba(111,231,210,.5); }
+    .link:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+    .link .left { display: inline-flex; align-items: center; gap: 12px; }
+    .icon { width: 22px; height: 22px; opacity: .9; } .icon-film { transform: rotate(90deg); transform-origin: 50% 50%; } .contact { text-align: center; margin-top: 4px; } .contact a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--border); padding-bottom: 1px; } .contact a:hover { border-color: rgba(111,231,210,.6); } footer { color: var(--muted); text-align: center; font-size: 12px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <main class="card" role="main">
+      <div class="topbar">
+        <button id="themeToggle" class="theme-btn" aria-label="Changer le thème">🌓 Thème</button>
+      </div>
+
+      <section class="profile">
+        <!-- Remplacez la source de l'image par votre avatar --><h1>Cheer O Matic</h1></section>
+
+      <nav class="links" aria-label="Liens principaux">
+        <a class="link" href="https://youtu.be/rZVUfLYMLf8" target="_blank" rel="noopener" title="Vidéo YouTube" aria-label="Installation du photobooth (YouTube)">
+          <span class="left">
+            <!-- Icône pellicule -->
+            <svg class="icon icon-film" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
+              <rect x="5" y="11" width="2" height="2" fill="currentColor"/>
+              <rect x="5" y="15" width="2" height="2" fill="currentColor"/>
+              <rect x="17" y="7" width="2" height="2" fill="currentColor"/>
+              <rect x="17" y="11" width="2" height="2" fill="currentColor"/>
+              <rect x="17" y="15" width="2" height="2" fill="currentColor"/>
+            </svg>
+            <strong>Installation du photobooth</strong>
+          </span>
+          <!-- chevron -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="link" href="https://youtu.be/Bwe1dLiH7vU" target="_blank" rel="noopener" title="Vidéo YouTube" aria-label="Changer le papier d'impression (YouTube)">
+          <span class="left">
+            <!-- Icône pellicule -->
+            <svg class="icon icon-film" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
+              <rect x="5" y="11" width="2" height="2" fill="currentColor"/>
+              <rect x="5" y="15" width="2" height="2" fill="currentColor"/>
+              <rect x="17" y="7" width="2" height="2" fill="currentColor"/>
+              <rect x="17" y="11" width="2" height="2" fill="currentColor"/>
+              <rect x="17" y="15" width="2" height="2" fill="currentColor"/>
+            </svg>
+            <strong>Changer le papier d'impression</strong>
+          </span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+      <section class="contact" aria-label="Contact">
+        <a class="js-mail" href="#" data-e="bG9pY0BjaGVlci1vLW1hdGljLmNvbQ==">Afficher l’email</a>
+        &nbsp;·&nbsp;
+        <a class="js-tel" href="#" data-t="KzMzNjg0NTY5NTU3">Afficher le téléphone</a>
+        <noscript>
+          <span>loic [at] cheer-o-matic [dot] com · 06 84 56 95 57</span>
+        </noscript>
+      </section>
+      <footer>
+        <p>© <span id="year"></span> Cheer O Matic — Tous droits réservés</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Gestion simple du thème clair/sombre + persistance
+    const root = document.documentElement;
+    const KEY = 'linkpage-theme';
+    const saved = localStorage.getItem(KEY);
+    if (saved === 'light' || saved === 'dark') {
+      root.setAttribute('data-theme', saved);
+    }
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const now = root.getAttribute('data-theme');
+      const next = now === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem(KEY, next);
+    });
+      (function(){
+      const mailEl = document.querySelector('.js-mail');
+      if (mailEl && mailEl.dataset.e) {
+        const email = atob(mailEl.dataset.e);
+        mailEl.href = 'mailto:' + email;
+        mailEl.textContent = email;
+        mailEl.setAttribute('aria-label', 'Envoyer un email à ' + email);
+      }
+      const telEl = document.querySelector('.js-tel');
+      if (telEl && telEl.dataset.t) {
+        const raw = atob(telEl.dataset.t);
+        telEl.href = 'tel:' + raw.replace(/[^\d+]/g, '');
+        telEl.textContent = formatFR(raw);
+        telEl.setAttribute('aria-label', 'Téléphoner au ' + telEl.textContent);
+      }
+      function formatFR(n) {
+        const d = n.replace(/[^\d+]/g, '');
+        if (d.startsWith('+33')) {
+          const local = '0' + d.slice(3);
+          return local.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+        }
+        if (d.startsWith('0') && d.length === 10) {
+          return d.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+        }
+        return n;
+      }
+    })();
+  </script>
+</body>
+</html>
